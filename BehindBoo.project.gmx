@@ -11,12 +11,17 @@
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
     </sprites>
+    <sprites name="sg_ghost">
+      <sprite>sprites\s_ghost_moving</sprite>
+      <sprite>sprites\s_ghost</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\Player</object>
     <object>objects\Wall</object>
+    <object>objects\Ghost</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
