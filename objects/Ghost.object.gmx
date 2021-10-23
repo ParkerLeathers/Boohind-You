@@ -143,6 +143,12 @@ x += xvel;
 //update y position
 y += yvel;
 
+//**Death**
+
+if(sprite_index==s_ghost_poof&amp;&amp;floor(image_index)==15){
+    instance_destroy(self);
+}
+
 </string>
           </argument>
         </arguments>

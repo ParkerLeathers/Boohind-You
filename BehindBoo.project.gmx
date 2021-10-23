@@ -13,6 +13,7 @@
     <sprites name="sg_ghost">
       <sprite>sprites\s_ghost_moving</sprite>
       <sprite>sprites\s_ghost</sprite>
+      <sprite>sprites\s_ghost_poof</sprite>
     </sprites>
     <sprites name="sg_wall">
       <sprite>sprites\s_wall</sprite>
@@ -51,10 +52,12 @@
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
-  <constants number="8">
+  <constants number="10">
     <constant name="ACCELERATION">.75</constant>
     <constant name="MAX_SPEED">5</constant>
     <constant name="WALKING_ANIMATION_SPEED_MAX">.5</constant>
+    <constant name="INVULNERABILITY_TIMER">5</constant>
+    <constant name="STARTING_LIVES">5</constant>
     <constant name="GHOST_ACCELERATION">.75</constant>
     <constant name="GHOST_MAX_SPEED">3</constant>
     <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>

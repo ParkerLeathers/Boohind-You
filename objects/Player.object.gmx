@@ -36,6 +36,8 @@ ytartarvel = 0;
 xace = 0;
 yace = 0;
 candy = 0;
+invultimer = 0;
+lives = STARTING_LIVES;
 
 </string>
           </argument>
@@ -185,9 +187,29 @@ Light.y += yvel;
 
 //**Candy Get**
 colobj = instance_place(x,y,Candy);
-if(instance_place(x,y,Candy)!=noone){
+if(colobj!=noone){
     instance_destroy(colobj);
     candy++;
+}
+
+//**Ghost Collision**
+colobj = instance_place(x,y,Ghost);
+if(colobj!=noone &amp;&amp; invultimer == 0){
+    if(lives&gt;0){
+        invultimer = room_speed * INVULNERABILITY_TIMER;
+        Ghost.sprite_index = s_ghost_poof;
+        Ghost.image_index = 0;
+        lives -= 1;
+    } else {
+        //end game
+    }
+}
+if(invultimer&gt;0){
+    if(invultimer%3==0)
+        image_alpha=0;
+    else
+        image_alpha=255;
+    invultimer--;
 }
 </string>
           </argument>
