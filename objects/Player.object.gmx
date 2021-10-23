@@ -194,11 +194,11 @@ if(colobj!=noone){
 
 //**Ghost Collision**
 colobj = instance_place(x,y,Ghost);
-if(colobj!=noone &amp;&amp; invultimer == 0){
+if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invultimer == 0){
     if(lives&gt;0){
         invultimer = room_speed * INVULNERABILITY_TIMER;
-        Ghost.sprite_index = s_ghost_poof;
-        Ghost.image_index = 0;
+        colobj.sprite_index = s_ghost_poof;
+        colobj.image_index = 0;
         lives -= 1;
     } else {
         //end game
