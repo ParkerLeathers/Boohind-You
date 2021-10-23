@@ -200,6 +200,10 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         colobj.sprite_index = s_ghost_poof;
         colobj.image_index = 0;
         lives -= 1;
+        Light.x = x;
+        Light.y = y;
+        Light.xvel = 0;
+        Light.yvel = 0;
     } else {
         //end game
     }
