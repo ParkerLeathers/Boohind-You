@@ -43,10 +43,10 @@
     <object>objects\Heart</object>
     <object>objects\Lighting_Renderer</object>
     <object>objects\Light</object>
-    <object>objects\o_candy</object>
-    <object>objects\o_boobar</object>
-    <object>objects\o_boocup</object>
-    <object>objects\o_boosheys</object>
+    <object>objects\Candy</object>
+    <object>objects\Boobar</object>
+    <object>objects\Boocup</object>
+    <object>objects\Boosheys</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

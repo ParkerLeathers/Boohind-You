@@ -35,7 +35,7 @@ xtartarvel = 0;
 ytartarvel = 0;
 xace = 0;
 yace = 0;
-
+candy = 0;
 
 </string>
           </argument>
@@ -182,6 +182,13 @@ Light.x += xvel;
 //update y position
 y += yvel;
 Light.y += yvel;
+
+//**Candy Get**
+colobj = instance_place(x,y,Candy);
+if(instance_place(x,y,Candy)!=noone){
+    instance_destroy(colobj);
+    candy++;
+}
 </string>
           </argument>
         </arguments>
