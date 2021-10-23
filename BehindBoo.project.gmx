@@ -17,9 +17,20 @@
     </sprites>
     <sprites name="sg_wall">
       <sprite>sprites\s_wall</sprite>
-      <sprite>sprites\s_wall_end</sprite>
       <sprite>sprites\s_wall_junc</sprite>
-      <sprite>sprites\s_wall_corner</sprite>
+      <sprites name="sg_wall_corner">
+        <sprite>sprites\s_wall_corner_top_left</sprite>
+        <sprite>sprites\s_wall_corner_top_right</sprite>
+        <sprite>sprites\s_wall_corner_bottom_right</sprite>
+        <sprite>sprites\s_wall_corner_bottom_left</sprite>
+      </sprites>
+      <sprite>sprites\s_wall_horizontal</sprite>
+      <sprites name="sg_wall_end">
+        <sprite>sprites\s_wall_end_bottom</sprite>
+        <sprite>sprites\s_wall_end_right</sprite>
+        <sprite>sprites\s_wall_end_left</sprite>
+        <sprite>sprites\s_wall_end_top</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\s_tile</sprite>
     <sprite>sprites\s_heart</sprite>
@@ -32,15 +43,22 @@
   </sprites>
   <backgrounds name="background">
     <background>background\b_tile</background>
+    <backgrounds name="bg_outer_tile">
+      <background>background\b_outer_tile</background>
+      <background>background\b_outer_tiles</background>
+      <background>background\b_outer_tile_right_slab</background>
+      <background>background\b_outer_tile_top_slab</background>
+      <background>background\b_outer_tile_left_slab</background>
+      <background>background\b_outer_tile_bottom_slab</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\Ghost</object>
     <object>objects\Player</object>
     <object>objects\Wall</object>
-    <object>objects\Wall_End</object>
     <object>objects\Wall_Junc</object>
-    <object>objects\Wall_Corner</object>
+    <object>objects\Wall_Horizontal</object>
     <object>objects\Heart</object>
     <object>objects\Lighting_Renderer</object>
     <object>objects\Light</object>
@@ -48,6 +66,18 @@
     <object>objects\Boobar</object>
     <object>objects\Boocup</object>
     <object>objects\Boosheys</object>
+    <objects name="Wall_Corner_Group">
+      <object>objects\Wall_Corner_Top_Left</object>
+      <object>objects\Wall_Corner_Top_Right</object>
+      <object>objects\Wall_Corner_Bottom_Left</object>
+      <object>objects\Wall_Corner_Bottom_Right</object>
+    </objects>
+    <objects name="Wall_End_Group">
+      <object>objects\Wall_End_Bottom</object>
+      <object>objects\Wall_End_Right</object>
+      <object>objects\Wall_End_Left</object>
+      <object>objects\Wall_End_Top</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

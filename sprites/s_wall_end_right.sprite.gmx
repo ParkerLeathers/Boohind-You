@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>24</bbox_left>
-  <bbox_right>63</bbox_right>
+  <bbox_left>0</bbox_left>
+  <bbox_right>47</bbox_right>
   <bbox_top>24</bbox_top>
-  <bbox_bottom>63</bbox_bottom>
+  <bbox_bottom>42</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,6 +20,6 @@
   <width>64</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\s_wall_corner_0.png</frame>
+    <frame index="0">images\s_wall_end_right_0.png</frame>
   </frames>
 </sprite>
