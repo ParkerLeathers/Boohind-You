@@ -9,6 +9,7 @@
     <sprites name="sg_player">
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
+      <sprite>sprites\sprite9</sprite>
     </sprites>
     <sprites name="sg_ghost">
       <sprite>sprites\s_ghost_moving</sprite>
@@ -21,18 +22,20 @@
       <sprite>sprites\s_wall_corner</sprite>
     </sprites>
     <sprite>sprites\s_tile</sprite>
+    <sprite>sprites\s_heart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_tile</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\Player</object>
     <object>objects\Ghost</object>
+    <object>objects\Player</object>
     <object>objects\Wall</object>
     <object>objects\Wall_End</object>
     <object>objects\Wall_Junc</object>
     <object>objects\Wall_Corner</object>
+    <object>objects\Heart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
