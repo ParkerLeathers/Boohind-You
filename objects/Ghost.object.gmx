@@ -63,10 +63,17 @@ yace = 0;
 
 //find target velocities
 var vectorlen = sqrt(sqr(Player.x-x) + sqr(Player.y-y));
-var xratio = (Player.x-x) / vectorlen;
-var yratio = (Player.y-y) / vectorlen;
-xtarvel = GHOST_MAX_SPEED * xratio;
-ytarvel = GHOST_MAX_SPEED * yratio;
+var xratio = 0;
+var yratio = 0;
+if(vectorlen != 0){
+    xratio = (Player.x-x) / vectorlen;
+    yratio = (Player.y-y) / vectorlen;
+    xtarvel = GHOST_MAX_SPEED * xratio;
+    ytarvel = GHOST_MAX_SPEED * yratio;
+else {
+    xtarvel = 0;
+    ytarvel = 0;
+}
 
 //find accelerations
 vectorlen = sqrt(sqr(xtarvel - xvel) + sqr(ytarvel - yvel));

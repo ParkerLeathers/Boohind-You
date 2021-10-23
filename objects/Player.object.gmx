@@ -83,9 +83,11 @@ if keyboard_check(ord("W")) &amp;&amp; !keyboard_check(ord("S")){
 
 //find target velocities
 var vectorlen = sqrt(sqr(xtartarvel) + sqr(ytartarvel));
-var xratio = xtartarvel / vectorlen;
-var yratio = ytartarvel / vectorlen;
+var xratio = 0; 
+var yratio = 0; 
 if(vectorlen != 0){
+    xratio = xtartarvel / vectorlen;
+    yratio = ytartarvel / vectorlen;
     xtarvel = MAX_SPEED * xratio;
     ytarvel = MAX_SPEED * yratio;
 } else {
