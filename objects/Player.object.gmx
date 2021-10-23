@@ -177,8 +177,6 @@ x += xvel;
 //update y position
 y += yvel;
 
-show_debug_message(string(fps));
-
 </string>
           </argument>
         </arguments>

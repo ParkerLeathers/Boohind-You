@@ -6,7 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\s_wall</sprite>
     <sprites name="sg_player">
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
@@ -15,13 +14,25 @@
       <sprite>sprites\s_ghost_moving</sprite>
       <sprite>sprites\s_ghost</sprite>
     </sprites>
+    <sprites name="sg_wall">
+      <sprite>sprites\s_wall</sprite>
+      <sprite>sprites\s_wall_end</sprite>
+      <sprite>sprites\s_wall_junc</sprite>
+      <sprite>sprites\s_wall_corner</sprite>
+    </sprites>
+    <sprite>sprites\s_tile</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\b_tile</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\Player</object>
-    <object>objects\Wall</object>
     <object>objects\Ghost</object>
+    <object>objects\Wall</object>
+    <object>objects\Wall_End</object>
+    <object>objects\Wall_Junc</object>
+    <object>objects\Wall_Corner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
