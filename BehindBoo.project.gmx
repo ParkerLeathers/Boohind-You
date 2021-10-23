@@ -9,7 +9,6 @@
     <sprites name="sg_player">
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
-      <sprite>sprites\sprite9</sprite>
     </sprites>
     <sprites name="sg_ghost">
       <sprite>sprites\s_ghost_moving</sprite>
@@ -23,6 +22,7 @@
     </sprites>
     <sprite>sprites\s_tile</sprite>
     <sprite>sprites\s_heart</sprite>
+    <sprite>sprites\s_blank</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_tile</background>
@@ -36,17 +36,21 @@
     <object>objects\Wall_Junc</object>
     <object>objects\Wall_Corner</object>
     <object>objects\Heart</object>
+    <object>objects\Lighting_Renderer</object>
+    <object>objects\Light</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
-  <constants number="6">
+  <constants number="8">
     <constant name="ACCELERATION">.75</constant>
     <constant name="MAX_SPEED">5</constant>
     <constant name="WALKING_ANIMATION_SPEED_MAX">.5</constant>
-    <constant name="GHOST_MAX_SPEED">3</constant>
     <constant name="GHOST_ACCELERATION">.75</constant>
+    <constant name="GHOST_MAX_SPEED">3</constant>
     <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>
+    <constant name="LIGHT_ACCELERATION">.4</constant>
+    <constant name="LIGHT_MAX_SPEED">6</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
