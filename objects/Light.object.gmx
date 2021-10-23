@@ -120,9 +120,23 @@ else
 
 //update x position
 x += xvel;
-
+if(x &lt; Player.x-view_wview[0]/2){
+    x = Player.x-view_wview[0]/2;
+    xvel = 0;
+}else if(x &gt; Player.x+view_wview[0]/2){
+    x = Player.x+view_wview[0]/2;
+    xvel = 0;
+}
 //update y position
 y += yvel;
+if(y &lt; Player.y-view_hview[0]/2){
+    y = Player.y-view_hview[0]/2;
+    yvel = 0;
+}
+else if(y &gt; Player.y+view_hview[0]/2){
+    y = Player.y+view_hview[0]/2;
+    yvel = 0;
+}
 
 
 </string>

@@ -177,10 +177,11 @@ if(abs(xvel)&gt;.1||abs(yvel)&gt;.1){
 
 //update x position
 x += xvel;
+Light.x += xvel;
 
 //update y position
 y += yvel;
-
+Light.y += yvel;
 </string>
           </argument>
         </arguments>
