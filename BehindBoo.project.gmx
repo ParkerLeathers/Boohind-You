@@ -23,6 +23,11 @@
     <sprite>sprites\s_tile</sprite>
     <sprite>sprites\s_heart</sprite>
     <sprite>sprites\s_blank</sprite>
+    <sprites name="sg_candies">
+      <sprite>sprites\s_boobar</sprite>
+      <sprite>sprites\s_boocup</sprite>
+      <sprite>sprites\s_boosheys</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\b_tile</background>
@@ -38,6 +43,10 @@
     <object>objects\Heart</object>
     <object>objects\Lighting_Renderer</object>
     <object>objects\Light</object>
+    <object>objects\o_candy</object>
+    <object>objects\o_boobar</object>
+    <object>objects\o_boocup</object>
+    <object>objects\o_boosheys</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
