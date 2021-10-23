@@ -70,7 +70,7 @@ if(vectorlen != 0){
     yratio = (Player.y-y) / vectorlen;
     xtarvel = GHOST_MAX_SPEED * xratio;
     ytarvel = GHOST_MAX_SPEED * yratio;
-else {
+} else {
     xtarvel = 0;
     ytarvel = 0;
 }
