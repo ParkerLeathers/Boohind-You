@@ -31,6 +31,10 @@ xvel = 0;
 yvel = 0;
 xtarvel = 0;
 ytarvel = 0;
+xtartarvel = 0;
+ytartarvel = 0;
+xace = 0;
+yace = 0;
 </string>
           </argument>
         </arguments>
@@ -55,58 +59,62 @@ ytarvel = 0;
             <kind>1</kind>
             <string>//**Acceleration**
 
-//set x target velocity
+//set x target target velocity
 if keyboard_check(ord("A")) &amp;&amp; !keyboard_check(ord("D")){
-    xtarvel = -MAX_SPEED;
+    xtartarvel = -MAX_SPEED;
     image_xscale = -1;
 } else if keyboard_check(ord("D")) &amp;&amp; !keyboard_check(ord("A")){
-    xtarvel = MAX_SPEED;
+    xtartarvel = MAX_SPEED;
     image_xscale = 1;
 } else {
-    xtarvel = 0;
+    xtartarvel = 0;
 }
 
-//set y target velocity
+//set y target target velocity
 if keyboard_check(ord("W")) &amp;&amp; !keyboard_check(ord("S")){
-    ytarvel = -MAX_SPEED;
+    ytartarvel = -MAX_SPEED;
 } else if keyboard_check(ord("S")) &amp;&amp; !keyboard_check(ord("W")){
-    ytarvel = MAX_SPEED;
+    ytartarvel = MAX_SPEED;
 } else {
+    ytartarvel = 0;
+}
+
+//find target velocities
+var vectorlen = sqrt(sqr(xtartarvel) + sqr(ytartarvel));
+var xratio = xtartarvel / vectorlen;
+var yratio = ytartarvel / vectorlen;
+if(vectorlen != 0){
+    xtarvel = MAX_SPEED * xratio;
+    ytarvel = MAX_SPEED * yratio;
+} else {
+    xtarvel = 0;
     ytarvel = 0;
+}
+//find accelerations
+vectorlen = sqrt(sqr(xtarvel - xvel) + sqr(ytarvel - yvel));
+
+if(vectorlen != 0){
+    xratio = (xtarvel - xvel) / vectorlen;
+    yratio = (ytarvel - yvel) / vectorlen;
+    xace = ACCELERATION * xratio;
+    yace = ACCELERATION * yratio;
+} else {
+    xace = 0;
+    yace = 0;
 }
 
 //update x velocity
-if(xvel &lt; xtarvel &amp;&amp; xvel + ACCELERATION &lt;= xtarvel)
-    xvel += ACCELERATION;
-else if(xvel &lt; xtarvel &amp;&amp; xvel + ACCELERATION &gt; xtarvel)
-    xvel = xtarvel;
-else if(xvel &gt; xtarvel &amp;&amp; xvel - ACCELERATION &gt;= xtarvel)
-    xvel -= ACCELERATION;
-else if(xvel &gt; xtarvel &amp;&amp; xvel - ACCELERATION &lt; xtarvel)
+if(xvel != xtarvel &amp;&amp; sign(xvel-xtarvel) == sign((xvel+xace)-xtarvel))
+    xvel += xace;
+else
     xvel = xtarvel;
 
-if(xvel &gt; MAX_SPEED)
-    xvel = MAX_SPEED;
-else if(xvel &lt; -MAX_SPEED)
-    xvel = -MAX_SPEED;
     
 //update y velocity
-if(yvel &lt; ytarvel &amp;&amp; yvel + ACCELERATION &lt;= ytarvel)
-    yvel += ACCELERATION;
-else if(yvel &lt; ytarvel &amp;&amp; yvel + ACCELERATION &gt; ytarvel)
+if(yvel != ytarvel &amp;&amp; sign(yvel-ytarvel) == sign((yvel+yace)-ytarvel))
+    yvel += yace;
+else
     yvel = ytarvel;
-else if(yvel &gt; ytarvel &amp;&amp; yvel - ACCELERATION &gt;= ytarvel)
-    yvel -= ACCELERATION;
-else if(yvel &gt; ytarvel &amp;&amp; yvel - ACCELERATION &lt; ytarvel)
-    yvel = ytarvel;
-
-if(yvel &gt; MAX_SPEED)
-    yvel = MAX_SPEED;
-else if(yvel &lt; -MAX_SPEED){
-    yvel = -MAX_SPEED;
-}
-
-//TODO: NORMALIZE
 
 //**Collision**
 
@@ -155,9 +163,9 @@ while(colobj != noone &amp;&amp; (xvel != 0 || yvel != 0)){ //if there has been 
 
 //**Animation**
 
-if(abs(xvel)&gt;1||abs(yvel)&gt;.1){
+if(abs(xvel)&gt;.1||abs(yvel)&gt;.1){
     sprite_index = s_player_walking;
-    animation_speed = sqrt(sqr(xvel) + sqr(yvel)) * WALKING_ANIMATION_SPEED_MODIFIER;
+    image_speed = sqrt(sqr(xvel) + sqr(yvel)) / MAX_SPEED * WALKING_ANIMATION_SPEED_MAX;
 } else
     sprite_index = s_player;
 
@@ -168,6 +176,9 @@ x += xvel;
 
 //update y position
 y += yvel;
+
+show_debug_message(string(fps));
+
 </string>
           </argument>
         </arguments>

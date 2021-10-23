@@ -26,10 +26,13 @@
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
-  <constants number="3">
+  <constants number="6">
     <constant name="ACCELERATION">.75</constant>
     <constant name="MAX_SPEED">5</constant>
-    <constant name="WALKING_ANIMATION_SPEED_MODIFIER">1</constant>
+    <constant name="WALKING_ANIMATION_SPEED_MAX">.5</constant>
+    <constant name="GHOST_MAX_SPEED">3</constant>
+    <constant name="GHOST_ACCELERATION">.75</constant>
+    <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
