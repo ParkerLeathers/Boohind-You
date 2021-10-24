@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_theme</sound>
+    <sound>sound\snd_eat</sound>
+    <sound>sound\snd_oof</sound>
+    <sound>sound\snd_power</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_tile</sprite>
     <sprite>sprites\s_tombstone</sprite>
@@ -57,6 +62,7 @@
       <sprite>sprites\s_battery</sprite>
       <sprite>sprites\s_battery_draining</sprite>
     </sprites>
+    <sprite>sprites\s_button_back</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\b_tile</background>
@@ -69,6 +75,7 @@
       <background>background\b_outer_tile_bottom_slab</background>
     </backgrounds>
     <background>background\b_gameover</background>
+    <background>background\b_instructions</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -87,6 +94,7 @@
     <object>objects\End_Screen_Candy_Display</object>
     <object>objects\Battery</object>
     <object>objects\Tombstone</object>
+    <object>objects\Button_Back</object>
     <objects name="Wall_Corner_Group">
       <object>objects\Wall_Corner_Top_Left</object>
       <object>objects\Wall_Corner_Top_Right</object>
@@ -118,6 +126,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
+    <room>rooms\instructions</room>
     <room>rooms\gameover</room>
   </rooms>
   <constants number="14">

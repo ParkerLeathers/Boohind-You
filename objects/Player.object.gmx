@@ -45,6 +45,10 @@ lives = STARTING_LIVES;
 //**GLOBAL VARIABLES**
 
 global.lightradiusbonus = 0;
+
+//**MUSIC**
+
+audio_play_sound(snd_theme,0,true);
 </string>
           </argument>
         </arguments>
@@ -195,6 +199,7 @@ Light.y += yvel;
 //**Candy Get**
 colobj = instance_place(x,y,Candy);
 if(colobj!=noone){
+    audio_play_sound(snd_eat, 1, false);
     instance_destroy(colobj);
     candy++;
 }
@@ -204,7 +209,7 @@ colobj = instance_place(x,y,Battery);
 if(colobj!=noone){
     instance_destroy(colobj);
     batterytimer = room_speed * BATTERY_TIMER;
-    
+    audio_play_sound(snd_power, 1, false);
 }
 
 //While battery timer on
@@ -242,6 +247,7 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         Light.y = y;
         Light.xvel = 0;
         Light.yvel = 0;
+        audio_play_sound(snd_oof,1,false);
     } else {
         //end game
         image_speed = 1;
@@ -266,6 +272,7 @@ else if(timmydeathtimer==1){
             global.candy[i]=true;
         else
             global.candy[i]=false;
+    audio_stop_all();
     room_goto(gameover);
 }else {
     if(image_index&gt;14)
