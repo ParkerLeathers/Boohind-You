@@ -15,6 +15,12 @@
     <sprite>sprites\s_tombstone</sprite>
     <sprite>sprites\s_blank</sprite>
     <sprite>sprites\s_heart</sprite>
+    <sprites name="sg_buttons">
+      <sprite>sprites\s_button_back</sprite>
+      <sprite>sprites\b_button_play</sprite>
+      <sprite>sprites\b_button_quit</sprite>
+      <sprite>sprites\b_button_help</sprite>
+    </sprites>
     <sprites name="sg_player">
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
@@ -62,9 +68,12 @@
       <sprite>sprites\s_battery</sprite>
       <sprite>sprites\s_battery_draining</sprite>
     </sprites>
-    <sprite>sprites\s_button_back</sprite>
   </sprites>
   <backgrounds name="background">
+    <background>background\b_gameover</background>
+    <background>background\b_instructions</background>
+    <background>background\b_menu</background>
+    <background>background\b_win</background>
     <background>background\b_tile</background>
     <backgrounds name="bg_outer_tile">
       <background>background\b_outer_tile</background>
@@ -74,8 +83,6 @@
       <background>background\b_outer_tile_left_slab</background>
       <background>background\b_outer_tile_bottom_slab</background>
     </backgrounds>
-    <background>background\b_gameover</background>
-    <background>background\b_instructions</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -94,7 +101,6 @@
     <object>objects\End_Screen_Candy_Display</object>
     <object>objects\Battery</object>
     <object>objects\Tombstone</object>
-    <object>objects\Button_Back</object>
     <objects name="Wall_Corner_Group">
       <object>objects\Wall_Corner_Top_Left</object>
       <object>objects\Wall_Corner_Top_Right</object>
@@ -123,11 +129,19 @@
       <object>objects\Candy_Corn</object>
       <object>objects\Burst</object>
     </objects>
+    <objects name="Button_Group">
+      <object>objects\Button_Back</object>
+      <object>objects\Button_Play</object>
+      <object>objects\Button_Help</object>
+      <object>objects\Button_Quit</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\menu</room>
     <room>rooms\instructions</room>
+    <room>rooms\room0</room>
     <room>rooms\gameover</room>
+    <room>rooms\win</room>
   </rooms>
   <constants number="14">
     <constant name="ACCELERATION">.75</constant>
@@ -135,7 +149,7 @@
     <constant name="WALKING_ANIMATION_SPEED_MAX">.6</constant>
     <constant name="INVULNERABILITY_TIMER">5</constant>
     <constant name="BATTERY_TIMER">15</constant>
-    <constant name="STARTING_LIVES">2</constant>
+    <constant name="STARTING_LIVES">0</constant>
     <constant name="GHOST_ACCELERATION">.1</constant>
     <constant name="GHOST_MAX_SPEED">3</constant>
     <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>

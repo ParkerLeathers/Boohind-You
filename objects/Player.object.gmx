@@ -250,6 +250,10 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         audio_play_sound(snd_oof,1,false);
     } else {
         //end game
+        Light.x = x;
+        Light.y = y;
+        Light.xvel = 0;
+        Light.yvel = 0;
         image_speed = 1;
         sprite_index = s_player_dying;
     }
