@@ -133,16 +133,18 @@ if(xvel&gt;0)
 else
     image_xscale = 1;
 
-//sprite_index = s_ghost_moving; //read if ghost ever stops moving
+//sprite_index = s_ghost_moving; //readd if ghost ever stops moving
 image_speed = sqrt(sqr(xvel) + sqr(yvel)) / GHOST_MAX_SPEED * GHOST_MOVING_ANIMATION_SPEED_MAX;
 
 //**Movement**
 
 //update x position
-x += xvel;
+if(sprite_index==s_ghost_moving)
+    x += xvel;
 
 //update y position
-y += yvel;
+if(sprite_index==s_ghost_moving)
+    y += yvel;
 
 //**Death**
 

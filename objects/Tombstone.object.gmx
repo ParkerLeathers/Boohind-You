@@ -70,11 +70,11 @@ if(behindyoutimer==1) //right before the behindyoutimer would end, set it to -1 
 else if(behindyoutimer&gt;0){
     scaledtimer = abs(abs(room_speed*2 - abs(behindyoutimer*2 - room_speed * 2))/(room_speed*2));
     draw_set_color(make_color_rgb(136,161,162+90*scaledtimer));
-    draw_text_transformed(x-3,y+10,"Behind#You",.5+.5*scaledtimer,.5+.5*scaledtimer,0);
+    draw_text_transformed(x-3,y+8,"Behind#You",.5+.5*scaledtimer,.5+.5*scaledtimer,0);
     behindyoutimer--;
 }
 
-draw_text_transformed(x-3,y+10,"Behind#You",.5,.5,0);
+draw_text_transformed(x-3,y+8,"Behind#You",.5,.5,0);
 </string>
           </argument>
         </arguments>

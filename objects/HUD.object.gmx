@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//add self to array of candies
-global.candy[array_length_1d(global.candy)] = self;
-global.candysprites[array_length_1d(global.candysprites)] = sprite_index;
+            <string>//**GLOBAL VARIABLES**
+global.candy = array_create(0);
+global.candysprites = array_create(0);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,7 +50,16 @@ global.candysprites[array_length_1d(global.candysprites)] = sprite_index;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y += sin((current_time%floor(2*pi*1000))/500-floor(2*pi*500));
+            <string>for(var i = 0; i &lt; lives; i++)
+    draw_sprite(s_heart, -1, 50 + 60*i, 50);
+for(var i = 0; i &lt; array_length_1d(global.candy); i++)
+    if(instance_exists(global.candy[i]))
+        draw_sprite_ext(global.candysprites[i], -1, display_get_gui_width() - 50 - 60 * i, 50, 1, 1, 0, c_gray, 1);
+    else
+        draw_sprite(global.candysprites[i], -1, display_get_gui_width() - 50 - 60*i, 50);
+if(Player.batterytimer&gt;0){
+    draw_sprite(s_battery_draining, floor(Player.batterytimerratio * 22), display_get_gui_width()/2, 50);
+}
 </string>
           </argument>
         </arguments>
