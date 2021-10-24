@@ -39,6 +39,7 @@ candy = 0;
 invultimer = 0;
 batterytimer = 0;
 batterytimerratio = 0;
+timmydeathtimer = 0;
 lives = STARTING_LIVES;
 
 //**GLOBAL VARIABLES**
@@ -66,7 +67,9 @@ global.lightradiusbonus = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//**Acceleration**
+            <string>if(sprite_index != s_player_dying){
+
+//**Acceleration**
 
 //set x target target velocity
 if keyboard_check(ord("A")) &amp;&amp; !keyboard_check(ord("D")){
@@ -241,7 +244,8 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         Light.yvel = 0;
     } else {
         //end game
-        show_debug_message("L");
+        image_speed = 1;
+        sprite_index = s_player_dying;
     }
 }
 
@@ -252,6 +256,16 @@ if(invultimer&gt;0){
     else
         image_alpha=255;
     invultimer--;
+}
+}
+else if(timmydeathtimer==0)
+    timmydeathtimer = room_speed * TIMMY_DEATH_TIME;
+else if(timmydeathtimer==1)
+    room_goto(gameover);
+else {
+    if(image_index&gt;14)
+        image_index = 14;
+    timmydeathtimer--;
 }
 </string>
           </argument>
