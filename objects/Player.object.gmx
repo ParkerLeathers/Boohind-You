@@ -37,8 +37,12 @@ xace = 0;
 yace = 0;
 candy = 0;
 invultimer = 0;
+batterytimer = 0;
 lives = STARTING_LIVES;
 
+//**GLOBAL VARIABLES**
+
+global.lightradiusbonus = 0;
 </string>
           </argument>
         </arguments>
@@ -192,6 +196,29 @@ if(colobj!=noone){
     candy++;
 }
 
+//**Battery Get**
+colobj = instance_place(x,y,Battery);
+if(colobj!=noone){
+    instance_destroy(colobj);
+    batterytimer = room_speed * BATTERY_TIMER;
+    
+}
+
+//While battery timer on
+var batterytimerratio;
+if(batterytimer&gt;0){
+    batterytimer--;
+    batterytimerratio = ((room_speed * BATTERY_TIMER)-batterytimer)/(room_speed * BATTERY_TIMER);
+    if(batterytimerratio &lt; .1)
+        global.lightradiusbonus = batterytimerratio * 10 * (LIGHT_BATTERY_RADIUS - LIGHT_RADIUS);
+    else if(batterytimerratio &gt; .9)
+        global.lightradiusbonus = 10*(1-batterytimerratio) * (LIGHT_BATTERY_RADIUS - LIGHT_RADIUS);
+    else
+        global.lightradiusbonus = LIGHT_BATTERY_RADIUS - LIGHT_RADIUS;
+} else {
+    global.lightradiusbonus = 0;
+}
+
 //**Ghost Collision**
 colobj = instance_place(x,y,Ghost);
 if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invultimer == 0){
@@ -208,6 +235,8 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         //end game
     }
 }
+
+//While invulnerability timer on
 if(invultimer&gt;0){
     if(invultimer%3==0)
         image_alpha=0;

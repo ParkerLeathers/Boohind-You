@@ -10,13 +10,14 @@
     <sprite>sprites\s_tombstone</sprite>
     <sprite>sprites\s_blank</sprite>
     <sprite>sprites\s_heart</sprite>
+    <sprite>sprites\s_battery</sprite>
     <sprites name="sg_player">
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
     </sprites>
     <sprites name="sg_ghost">
-      <sprite>sprites\s_ghost_moving</sprite>
       <sprite>sprites\s_ghost</sprite>
+      <sprite>sprites\s_ghost_moving</sprite>
       <sprite>sprites\s_ghost_poof</sprite>
     </sprites>
     <sprites name="sg_wall">
@@ -76,6 +77,7 @@
     <object>objects\Boobar</object>
     <object>objects\Boocup</object>
     <object>objects\Boosheys</object>
+    <object>objects\Battery</object>
     <object>objects\Tombstone</object>
     <objects name="Wall_Corner_Group">
       <object>objects\Wall_Corner_Top_Left</object>
@@ -99,11 +101,12 @@
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
-  <constants number="11">
+  <constants number="13">
     <constant name="ACCELERATION">.75</constant>
     <constant name="MAX_SPEED">5</constant>
     <constant name="WALKING_ANIMATION_SPEED_MAX">.5</constant>
     <constant name="INVULNERABILITY_TIMER">5</constant>
+    <constant name="BATTERY_TIMER">10</constant>
     <constant name="STARTING_LIVES">2</constant>
     <constant name="GHOST_ACCELERATION">.75</constant>
     <constant name="GHOST_MAX_SPEED">3</constant>
@@ -111,6 +114,7 @@
     <constant name="LIGHT_ACCELERATION">.4</constant>
     <constant name="LIGHT_MAX_SPEED">6</constant>
     <constant name="LIGHT_RADIUS">50</constant>
+    <constant name="LIGHT_BATTERY_RADIUS">100</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

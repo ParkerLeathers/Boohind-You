@@ -46,7 +46,7 @@ with(Light){
     draw_set_alpha(0.5);
     draw_set_color(c_white);
     draw_set_blend_mode(bm_subtract); 
-    draw_circle(x, y, LIGHT_RADIUS, false);
+    draw_circle(x, y, LIGHT_RADIUS + global.lightradiusbonus, false);
 }
 
 //reset

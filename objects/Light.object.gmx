@@ -35,6 +35,11 @@ xtartarvel = 0;
 ytartarvel = 0;
 xace = 0;
 yace = 0;
+
+//**POSITIONING**
+
+x = Player.x;
+y = Player.y;
 </string>
           </argument>
         </arguments>
