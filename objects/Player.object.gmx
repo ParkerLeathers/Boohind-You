@@ -275,8 +275,10 @@ if(invultimer&gt;0){
 }
 }
 else if(timmydeathtimer==0)
+    //start timmydeathtimer
     timmydeathtimer = room_speed * TIMMY_DEATH_TIME;
 else if(timmydeathtimer==1){
+    //end game
     for(var i = 0; i &lt; array_length_1d(global.candy); i++)
         if(instance_exists(global.candy[i]))
             global.candy[i]=true;
@@ -285,6 +287,7 @@ else if(timmydeathtimer==1){
     audio_stop_all();
     room_goto(gameover);
 }else {
+    //decrement timmydeathtimer
     if(image_index&gt;14)
         image_index = 14;
     timmydeathtimer--;
