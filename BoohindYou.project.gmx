@@ -84,6 +84,7 @@
     <object>objects\HUD</object>
     <object>objects\Lighting_Renderer</object>
     <object>objects\Light</object>
+    <object>objects\End_Screen_Candy_Display</object>
     <object>objects\Battery</object>
     <object>objects\Tombstone</object>
     <objects name="Wall_Corner_Group">
