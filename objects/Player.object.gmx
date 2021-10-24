@@ -230,7 +230,13 @@ if(batterytimer&gt;0){
 colobj = instance_place(x,y-1,Wall_Ladder);
 if(colobj!=noone){
     //game win
-    show_debug_message("W");
+    for(var i = 0; i &lt; array_length_1d(global.candy); i++)
+        if(instance_exists(global.candy[i]))
+            global.candy[i]=true;
+        else
+            global.candy[i]=false;
+    audio_stop_all();
+    room_goto(win);
 }
 
 //**Ghost Collision**
@@ -249,7 +255,7 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         Light.yvel = 0;
         audio_play_sound(snd_oof,1,false);
     } else {
-        //end game
+        //End game
         Light.x = x;
         Light.y = y;
         Light.xvel = 0;

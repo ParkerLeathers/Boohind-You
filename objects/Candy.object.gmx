@@ -50,7 +50,7 @@ global.candysprites[array_length_1d(global.candysprites)] = sprite_index;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y += sin((current_time%floor(2*pi*1000))/500-floor(2*pi*500));
+            <string>y += sin((current_time%floor(2*pi*500))/250-floor(2*pi*250));
 </string>
           </argument>
         </arguments>

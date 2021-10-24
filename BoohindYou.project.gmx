@@ -149,7 +149,7 @@
     <constant name="WALKING_ANIMATION_SPEED_MAX">.6</constant>
     <constant name="INVULNERABILITY_TIMER">5</constant>
     <constant name="BATTERY_TIMER">15</constant>
-    <constant name="STARTING_LIVES">0</constant>
+    <constant name="STARTING_LIVES">2</constant>
     <constant name="GHOST_ACCELERATION">.1</constant>
     <constant name="GHOST_MAX_SPEED">3</constant>
     <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>
