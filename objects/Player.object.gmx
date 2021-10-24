@@ -131,7 +131,6 @@ else
 
 //collision check
 var colobj = instance_place(x+xvel,y,Wall);
-
 while(colobj != noone &amp;&amp; xvel != 0){ //if there has been an x collision
     if(xvel &gt; 0)
         xvel-=0.1;
@@ -219,6 +218,13 @@ if(batterytimer&gt;0){
     global.lightradiusbonus = 0;
 }
 
+//**Win Check**
+colobj = instance_place(x,y-1,Wall_Ladder);
+if(colobj!=noone){
+    //game win
+    show_debug_message("W");
+}
+
 //**Ghost Collision**
 colobj = instance_place(x,y,Ghost);
 if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invultimer == 0){
@@ -235,6 +241,7 @@ if(colobj!=noone &amp;&amp; colobj.sprite_index != s_ghost_poof &amp;&amp; invul
         Light.yvel = 0;
     } else {
         //end game
+        show_debug_message("L");
     }
 }
 
