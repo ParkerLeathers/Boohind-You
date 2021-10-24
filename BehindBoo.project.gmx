@@ -6,6 +6,10 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\s_tile</sprite>
+    <sprite>sprites\s_tombstone</sprite>
+    <sprite>sprites\s_blank</sprite>
+    <sprite>sprites\s_heart</sprite>
     <sprites name="sg_player">
       <sprite>sprites\s_player</sprite>
       <sprite>sprites\s_player_walking</sprite>
@@ -18,13 +22,13 @@
     <sprites name="sg_wall">
       <sprite>sprites\s_wall</sprite>
       <sprite>sprites\s_wall_junc</sprite>
+      <sprite>sprites\s_wall_horizontal</sprite>
       <sprites name="sg_wall_corner">
         <sprite>sprites\s_wall_corner_top_left</sprite>
         <sprite>sprites\s_wall_corner_top_right</sprite>
         <sprite>sprites\s_wall_corner_bottom_right</sprite>
         <sprite>sprites\s_wall_corner_bottom_left</sprite>
       </sprites>
-      <sprite>sprites\s_wall_horizontal</sprite>
       <sprites name="sg_wall_end">
         <sprite>sprites\s_wall_end_bottom</sprite>
         <sprite>sprites\s_wall_end_right</sprite>
@@ -32,9 +36,6 @@
         <sprite>sprites\s_wall_end_top</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\s_tile</sprite>
-    <sprite>sprites\s_heart</sprite>
-    <sprite>sprites\s_blank</sprite>
     <sprites name="sg_candies">
       <sprite>sprites\s_boobar</sprite>
       <sprite>sprites\s_boocup</sprite>
@@ -53,6 +54,9 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\f_spooky</font>
+  </fonts>
   <objects name="objects">
     <object>objects\Ghost</object>
     <object>objects\Player</object>
@@ -66,6 +70,7 @@
     <object>objects\Boobar</object>
     <object>objects\Boocup</object>
     <object>objects\Boosheys</object>
+    <object>objects\Tombstone</object>
     <objects name="Wall_Corner_Group">
       <object>objects\Wall_Corner_Top_Left</object>
       <object>objects\Wall_Corner_Top_Right</object>
@@ -82,7 +87,7 @@
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
-  <constants number="10">
+  <constants number="11">
     <constant name="ACCELERATION">.75</constant>
     <constant name="MAX_SPEED">5</constant>
     <constant name="WALKING_ANIMATION_SPEED_MAX">.5</constant>
@@ -93,6 +98,7 @@
     <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>
     <constant name="LIGHT_ACCELERATION">.4</constant>
     <constant name="LIGHT_MAX_SPEED">6</constant>
+    <constant name="LIGHT_RADIUS">50</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -46,7 +46,7 @@ with(Light){
     draw_set_alpha(0.5);
     draw_set_color(c_white);
     draw_set_blend_mode(bm_subtract); 
-    draw_circle(x, y, 50, false);
+    draw_circle(x, y, LIGHT_RADIUS, false);
 }
 
 //reset
@@ -57,7 +57,7 @@ surface_reset_target();
 draw_surface(lighting, 0, 0);
 
 if(surface_exists(lighting))
-    surface_free(lighting)
+    surface_free(lighting);
 </string>
           </argument>
         </arguments>

@@ -35,7 +35,8 @@ xtarvel = 0;
 ytarvel = 0;
 xace = 0;
 yace = 0;
-
+originx = x;
+originy = y;
 
 </string>
           </argument>
@@ -146,7 +147,10 @@ y += yvel;
 //**Death**
 
 if(sprite_index==s_ghost_poof&amp;&amp;floor(image_index)==15){
-    instance_destroy(self);
+    x = originx;
+    y = originy;
+    sprite_index = s_ghost_moving;
+    image_index = 0;
 }
 
 </string>
