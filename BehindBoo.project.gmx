@@ -35,6 +35,12 @@
         <sprite>sprites\s_wall_end_left</sprite>
         <sprite>sprites\s_wall_end_top</sprite>
       </sprites>
+      <sprites name="sg_wall_t">
+        <sprite>sprites\s_wall_t_down</sprite>
+        <sprite>sprites\s_wall_t_up</sprite>
+        <sprite>sprites\s_wall_t_right</sprite>
+        <sprite>sprites\s_wall_t_left</sprite>
+      </sprites>
     </sprites>
     <sprites name="sg_candies">
       <sprite>sprites\s_boobar</sprite>
@@ -83,6 +89,12 @@
       <object>objects\Wall_End_Left</object>
       <object>objects\Wall_End_Top</object>
     </objects>
+    <objects name="Wall_T_Group">
+      <object>objects\Wall_T_Down</object>
+      <object>objects\Wall_T_Up</object>
+      <object>objects\Wall_T_Right</object>
+      <object>objects\Wall_T_Left</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
@@ -92,7 +104,7 @@
     <constant name="MAX_SPEED">5</constant>
     <constant name="WALKING_ANIMATION_SPEED_MAX">.5</constant>
     <constant name="INVULNERABILITY_TIMER">5</constant>
-    <constant name="STARTING_LIVES">3</constant>
+    <constant name="STARTING_LIVES">2</constant>
     <constant name="GHOST_ACCELERATION">.75</constant>
     <constant name="GHOST_MAX_SPEED">3</constant>
     <constant name="GHOST_MOVING_ANIMATION_SPEED_MAX">.5</constant>
